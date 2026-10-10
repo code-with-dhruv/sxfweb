@@ -1,26 +1,13 @@
-import AboutHeroSection from "@/components/aboutus/HeroSection";
-import React from "react";
-import AboutUsSection from "@/components/aboutus/AboutUs";
-import VisionariesSection from "@/components/aboutus/Visionaries";
-import PartnersSection from "@/components/sections/PartnersSection";
-import WhyChooseUsSection from "@/components/aboutus/WhyChooseUs";
-import FaqSection from "@/components/sections/FAQ";
-import ContactSection from "@/components/sections/ContactSection";
+import Link from "next/link";
+import { ArrowUpRight, MoveUpRight } from "lucide-react";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-function AboutUs() {
-  return (
-    <div>
-      <AboutHeroSection />
-      <AboutUsSection/>
-      <VisionariesSection/>
-      <PartnersSection/>
-      <WhyChooseUsSection/>
-      <FaqSection/>
-      <ContactSection/>
-      <Footer/>
-    </div>
-  );
-}
+const principles = [
+  ["01", "Consistency over intensity", "A strong body is built through repeatable habits, not short bursts of motivation."],
+  ["02", "People before machines", "Training works better when the room feels human, welcoming, and full of momentum."],
+  ["03", "Progress with purpose", "Every program is designed around the life you want to live outside the gym."],
+];
 
-export default AboutUs;
+export default function AboutUs() {
+  return <main className="min-h-screen bg-[#111310] text-[#f3f0e9]"><Header /><section className="relative overflow-hidden px-6 pb-24 pt-40 md:px-12 md:pt-48 lg:px-20"><div className="absolute right-[-10%] top-20 h-[32rem] w-[32rem] rounded-full bg-[#c8d96b]/10 blur-3xl" /><div className="relative mx-auto max-w-[1600px]"><p className="eyebrow text-[#c8d96b]">The Stallion standard / 001</p><h1 className="mt-8 max-w-5xl font-display text-[clamp(4rem,11vw,11rem)] leading-[.78] tracking-[-.08em]">Built for<br /><span className="text-[#c8d96b]">more.</span></h1><div className="mt-16 grid gap-10 border-t border-white/15 pt-8 md:grid-cols-[1fr_2fr] md:gap-20"><p className="eyebrow text-white/45">WHO WE ARE</p><p className="max-w-2xl text-2xl leading-tight text-white/75 md:text-4xl">Stallion is a training culture for people who refuse to settle. We make the hard work feel worth showing up for.</p></div></div></section><section className="bg-[#f3f0e9] px-6 py-24 text-[#111310] md:px-12 lg:px-20"><div className="mx-auto grid max-w-[1600px] gap-16 md:grid-cols-[.7fr_1.3fr] md:gap-28"><p className="eyebrow text-black/45">A different kind of gym</p><div><h2 className="font-display text-6xl leading-[.85] tracking-[-.06em] md:text-8xl">Train the<br /><span className="text-[#768735]">whole life.</span></h2><p className="mt-10 max-w-xl text-lg leading-relaxed text-black/65">We combine expert coaching, considered spaces, and a community that keeps you accountable. No intimidation. No noise for the sake of noise. Just a better way to get stronger.</p><Link href="/contact" className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#111310] px-6 py-4 text-sm font-bold text-[#f3f0e9]">Meet us in person <ArrowUpRight className="size-4" /></Link></div></div></section><section className="px-6 py-24 md:px-12 lg:px-20"><div className="mx-auto max-w-[1600px]"><p className="eyebrow text-[#c8d96b]">What we believe</p><div className="mt-12 grid border-t border-white/15 md:grid-cols-3">{principles.map(([number,title,body]) => <article key={number} className="border-b border-white/15 py-8 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0"><span className="font-mono text-xs text-[#c8d96b]">{number}</span><h3 className="mt-16 font-display text-4xl tracking-[-.04em]">{title}</h3><p className="mt-5 leading-relaxed text-white/55">{body}</p></article>)}</div></div></section><section className="border-t border-white/15 px-6 py-24 md:px-12 lg:px-20"><div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-10 md:flex-row md:items-end"><div><p className="eyebrow text-[#c8d96b]">Your next chapter</p><h2 className="mt-5 max-w-3xl font-display text-6xl leading-[.85] tracking-[-.06em] md:text-8xl">Start where<br />you are.</h2></div><Link href="/contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#c8d96b]">Book a tour <MoveUpRight className="size-4" /></Link></div></section><Footer /></main>}

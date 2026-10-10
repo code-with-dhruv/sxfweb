@@ -1,20 +1,8 @@
-import HeroSection from '@/components/branches/HeroSection'
-import Locations from '@/components/branches/Locations'
-import Footer from '@/components/layout/Footer'
-import ContactSection from '@/components/sections/ContactSection'
-import FaqSection from '@/components/sections/FAQ'
-import React from 'react'
+import Link from "next/link";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
-function Branches() {
-  return (
-    <div>
-      <HeroSection/>
-      <Locations/>
-      <FaqSection/>
-      <ContactSection/>
-      <Footer/>
-    </div>
-  )
-}
+const locations = [["01", "Soho", "London", "01–03 Brewer Street", "Mon–Fri 06:00—22:00"], ["02", "Clapham", "London", "48 The Pavement", "Mon–Fri 06:00—22:00"], ["03", "New Town", "Edinburgh", "12 Dundas Street", "Mon–Fri 06:30—21:30"]];
 
-export default Branches
+export default function Branches() { return <main className="min-h-screen bg-[#111310] text-[#f3f0e9]"><Header /><section className="relative overflow-hidden px-6 pb-24 pt-40 md:px-12 md:pt-48 lg:px-20"><div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-[#c8d96b]/10 blur-3xl" /><div className="relative mx-auto max-w-[1600px]"><p className="eyebrow text-[#c8d96b]">Find your room / 003</p><h1 className="mt-8 max-w-5xl font-display text-[clamp(4rem,11vw,11rem)] leading-[.78] tracking-[-.08em]">One standard.<br /><span className="text-[#c8d96b]">Everywhere.</span></h1><p className="mt-12 max-w-md text-lg leading-relaxed text-white/55">Different neighbourhoods. The same uncompromising approach to how you move, recover, and grow.</p></div></section><section className="bg-[#f3f0e9] px-6 py-24 text-[#111310] md:px-12 lg:px-20"><div className="mx-auto max-w-[1600px]"><div className="flex items-center justify-between"><p className="eyebrow text-black/45">Our locations</p><span className="font-mono text-xs text-black/45">03 studios</span></div><div className="mt-10 border-t border-black/15">{locations.map(([num,name,city,address,hours]) => <article key={name} className="grid gap-6 border-b border-black/15 py-10 md:grid-cols-[.3fr_1fr_1fr_auto] md:items-center"><span className="font-mono text-xs text-black/45">{num}</span><div><h2 className="font-display text-5xl tracking-[-.05em]">{name}</h2><p className="mt-1 text-sm text-black/50">{city}</p></div><div className="flex items-start gap-3 text-sm text-black/60"><MapPin className="mt-0.5 size-4 text-[#768735]" /> <span>{address}<br />{hours}</span></div><Link href="/contact" className="inline-flex items-center gap-2 text-sm font-bold">Explore studio <ArrowUpRight className="size-4" /></Link></article>)}</div></div></section><section className="px-6 py-24 md:px-12 lg:px-20"><div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-10 md:flex-row md:items-end"><div><p className="eyebrow text-[#c8d96b]">Not sure where to start?</p><h2 className="mt-6 max-w-3xl font-display text-6xl leading-[.85] tracking-[-.06em] md:text-8xl">Come see<br />for yourself.</h2></div><Link href="/contact" className="inline-flex items-center gap-3 rounded-full bg-[#c8d96b] px-6 py-4 text-sm font-bold text-[#111310]">Book a tour <ArrowUpRight className="size-4" /></Link></div></section><Footer /></main>}

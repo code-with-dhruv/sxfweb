@@ -1,23 +1,8 @@
-import HeroSection from "@/components/events/HeroSection";
-import Highlights from "@/components/events/Highlights";
-import WhyJoinUs from "@/components/events/WhyJoinUs";
+import Link from "next/link";
+import { ArrowUpRight, CalendarDays } from "lucide-react";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ContactSection from "@/components/sections/ContactSection";
-import FaqSection from "@/components/sections/FAQ";
-import React from "react";
 
-function Events() {
-  return (
-    <div>
-      <HeroSection />
-      {/* <EventsSection /> */}
-      <Highlights/>
-      <WhyJoinUs/>
-      <FaqSection/>
-      <ContactSection/>
-      <Footer/>
-    </div>
-  );
-}
+const events = [["17", "OCT", "Stallion Open House", "A full day of movement, music, and meeting the people behind the community."], ["26", "OCT", "Strength Lab", "An intimate workshop on building strength that lasts beyond the numbers."], ["09", "NOV", "Sunday Reset", "Mobility, breathwork, and a slower start to your strongest week."]];
 
-export default Events;
+export default function Events() { return <main className="min-h-screen bg-[#111310] text-[#f3f0e9]"><Header /><section className="px-6 pb-20 pt-40 md:px-12 md:pt-48 lg:px-20"><div className="mx-auto max-w-[1600px]"><div className="flex flex-col justify-between gap-12 md:flex-row md:items-end"><div><p className="eyebrow text-[#c8d96b]">Community calendar / 2026</p><h1 className="mt-8 max-w-5xl font-display text-[clamp(4rem,11vw,11rem)] leading-[.78] tracking-[-.08em]">More than<br /><span className="text-[#c8d96b]">training.</span></h1></div><p className="max-w-xs text-lg leading-snug text-white/55">Events that bring the room together and keep the energy moving.</p></div></div></section><section className="bg-[#c8d96b] px-6 py-8 text-[#111310] md:px-12 lg:px-20"><div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4"><div className="flex items-center gap-3"><CalendarDays className="size-5" /><span className="eyebrow">Next up</span></div><span className="font-display text-2xl tracking-[-.03em]">Stallion Open House — 17 OCT</span></div></section><section className="px-6 py-24 md:px-12 lg:px-20"><div className="mx-auto max-w-[1600px]"><p className="eyebrow text-white/45">Upcoming sessions</p><div className="mt-10 border-t border-white/15">{events.map(([day,month,title,body]) => <article key={title} className="grid gap-8 border-b border-white/15 py-10 md:grid-cols-[.35fr_1fr_1.2fr_auto] md:items-center"><div className="font-display text-6xl leading-none text-[#c8d96b]">{day}<span className="ml-2 font-mono text-xs text-white/45">{month}</span></div><h2 className="font-display text-4xl tracking-[-.04em]">{title}</h2><p className="max-w-md text-white/55">{body}</p><Link href="/contact" aria-label={`Register for ${title}`} className="flex size-12 items-center justify-center rounded-full border border-white/20 transition hover:border-[#c8d96b] hover:bg-[#c8d96b] hover:text-[#111310]"><ArrowUpRight className="size-5" /></Link></article>)}</div></div></section><section className="bg-[#f3f0e9] px-6 py-24 text-[#111310] md:px-12 lg:px-20"><div className="mx-auto max-w-[1600px]"><p className="eyebrow text-black/45">Bring someone along</p><h2 className="mt-8 max-w-4xl font-display text-6xl leading-[.85] tracking-[-.06em] md:text-8xl">The best sessions<br /><span className="text-[#768735]">are shared.</span></h2><Link href="/contact" className="mt-10 inline-flex items-center gap-3 rounded-full bg-[#111310] px-6 py-4 text-sm font-bold text-[#f3f0e9]">Get event updates <ArrowUpRight className="size-4" /></Link></div></section><Footer /></main>}
