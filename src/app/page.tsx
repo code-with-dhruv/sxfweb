@@ -21,15 +21,15 @@ export default function Home() {
       <section className="relative min-h-[780px] bg-[#111310] text-[#f3f0e9]">
         <div className="mx-auto grid min-h-[780px] max-w-[1600px] grid-cols-1 items-end gap-10 px-6 pb-16 pt-32 md:px-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20 lg:px-20 lg:pb-24">
           <div className="relative z-10 max-w-3xl">
-            <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[.28em] text-[#c8d96b]"><span className="size-2 rounded-full bg-[#c8d96b]" /> Hyderabad / Est. 2012</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1 }} className="font-display text-[clamp(4.5rem,11vw,10.5rem)] leading-[.78] tracking-[-.07em]">Make your <span className="text-[#c8d96b]">strong</span> move.</motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="mt-9 max-w-md text-lg leading-relaxed text-white/65">A different kind of training club. Less noise. Better coaching. A community that keeps showing up.</motion.p>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .3 }} className="mt-10 flex flex-wrap gap-3">
+            <motion.p initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[.28em] text-[#c8d96b]"><span className="size-2 rounded-full bg-[#c8d96b]" /> Hyderabad / Est. 2012</motion.p>
+            <motion.h1 initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .1 }} className="font-display text-[clamp(4.5rem,11vw,10.5rem)] leading-[.78] tracking-[-.07em]">Make your <span className="text-[#c8d96b]">strong</span> move.</motion.h1>
+            <motion.p initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .2 }} className="mt-9 max-w-md text-lg leading-relaxed text-white/65">A different kind of training club. Less noise. Better coaching. A community that keeps showing up.</motion.p>
+            <motion.div initial={{ opacity: 1, y: 0 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .3 }} className="mt-10 flex flex-wrap gap-3">
               <Link href="/contact" className="group inline-flex items-center gap-4 rounded-full bg-[#c8d96b] px-6 py-4 text-sm font-semibold text-[#111310] transition-transform hover:-translate-y-1">Start your trial <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></Link>
               <Link href="#programs" className="inline-flex items-center gap-3 rounded-full border border-white/25 px-6 py-4 text-sm font-semibold transition-colors hover:bg-white/10"><Play className="size-4 fill-current" /> Explore the club</Link>
             </motion.div>
           </div>
-          <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8 }} className="relative h-[420px] overflow-hidden rounded-[2rem] lg:h-[560px]">
+          <motion.div initial={{ opacity: 1, scale: 1 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8 }} className="relative h-[420px] overflow-hidden rounded-[2rem] lg:h-[560px]">
             <Image src="/images/hero/hero.png" alt="Athlete training at Stallion Xtreme Fitness" fill priority className="object-cover object-center grayscale-[.15]" sizes="(max-width: 1024px) 100vw, 45vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111310]/70 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between"><span className="max-w-[160px] text-sm leading-snug text-white/80">Train with intent.<br />Leave with energy.</span><span className="rounded-full border border-white/30 px-3 py-2 font-mono text-[10px] uppercase tracking-widest">01 / 04</span></div>
