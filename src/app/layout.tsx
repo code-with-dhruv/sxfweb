@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.stallionxtremefitness.com"),
   title: {
-    default: "Stallion Xtreme Fitness | Best Gym in Hyderabad",
-    template: "%s | Stallion Xtreme Fitness",
+    default: "Stallion — Train Different",
+    template: "%s | Stallion",
   },
-  description: "Stallion Xtreme Fitness is the best gym in Hyderabad, offering expert trainers, modern equipment, and personalized fitness plans.",
+  description: "A different kind of training club in Hyderabad. Better coaching, stronger habits, and a community that keeps showing up.",
   keywords: [
     "Best gym in Hyderabad",
     "Stallion Xtreme Fitness",
